@@ -1,0 +1,17 @@
+Tag especial do EJS: <%= %>
+Utilizada para exibir variáveis JS em HTML
+Ex: <%= nome %>
+
+Utilizada para exibir informações via condições ou repetições no EJS: <% %>
+Ex Condicional: 
+<% if(msg) { %>
+    <h3>Isso é uma mensagem de erro!</h3>
+<% } else { %>
+    <h3>Nenhum erro</h3>
+<% } %>
+
+Ex Repetição:
+<% produtos.forEach(function(produto){ %>
+    <%= produto.nome %>
+    <%= produto.preco %>
+<% }) %>

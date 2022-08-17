@@ -1,0 +1,104 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <header>
+        <H1>Guia de Perguntas e Respostas</H1>
+    </header>
+
+    <section class="btn-perguntar">
+        <a href="/sendask" class="btn btn-primary">Perguntar</a>    
+    </section> 
+    
+    <section class="container">
+        <% pergunta.forEach(pergunta => { %>
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <label>Data da pergunta:</label>
+                    <h5><%= pergunta.createdAt %></h5>
+                </div>
+
+                <div class="card-body">
+                    <label>Titulo da pergunta:</label>
+                    <h5><%= pergunta.titulo %></h5>
+                </div>
+
+                <div class="card-footer">
+                    <a href="/ask/<%= pergunta.id %>"><button class="btn btn-primary">Responder</button></a>
+                </div>
+            </div>
+        <% }) %>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--<div class="campoPR1" id="formulario-pergunta">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Pergunta: </h4>
+                    <% pergunta.forEach(pergunta => { %>
+                        <input class="form-control" type="text" value="<%= pergunta.titulo %>">
+                    <% }) %>
+                </div>
+                
+                <div class="card-body">
+                    <h4>Data da Pergunta: </h4>
+                    <input class="form-control" type="date" placeholder="Informe a data: ">
+                </div>
+                <button class="btn btn-primary">Responder</button>
+            </div>           
+        </div>
+
+        <div class="campoPR2" id="formulario-pergunta">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Pergunta: </h4>
+                    <input class="form-control" type="text" placeholder="Informe uma pergunta: ">
+                </div>
+                
+                <div class="card-body">
+                    <h4>Data da Pergunta: </h4>
+                    <input class="form-control" type="date" placeholder="Informe a data: ">
+                </div>
+                <button class="btn btn-primary">Responder</button>
+            </div>           
+        </div>
+
+        <div class="campoPR3" id="formulario-pergunta">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Pergunta: </h4>
+                    <input class="form-control" type="text" placeholder="Informe uma pergunta: ">
+                </div>
+                
+                <div class="card-body">
+                    <h4>Data da Pergunta: </h4>
+                    <input class="form-control" type="date" placeholder="Informe a data: ">
+                </div>
+                <button class="btn btn-primary">Responder</button>
+            </div>           
+        </div>
+
+        <div class="campoPR4" id="formulario-pergunta">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Pergunta: </h4>
+                    <input class="form-control" type="text" placeholder="Informe uma pergunta: ">
+                </div>
+                
+                <div class="card-body">
+                    <h4>Data da Pergunta: </h4>
+                    <input class="form-control" type="date" placeholder="Informe a data: ">
+                </div>
+                <button class="btn btn-primary">Responder</button>
+            </div>           
+        </div>-->
+    </section>
+</body>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,10 @@
+body { /*Aplicado em todos os bodys da aplicação*/
+    background-color: #eceff1;
+}
+#formulario-pergunta { /*Id localizada no arquivo perguntar.ejs*/
+    margin-top: 5vh; /*Margim de 5% baseada na altura da tela*/
+}
+
+#exibir-pergunta { /*Id localizada no arquivo exibirPergunta.ejs*/
+    margin-top:  5vh;
+}

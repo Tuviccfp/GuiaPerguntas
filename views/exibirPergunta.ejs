@@ -1,0 +1,56 @@
+<%- include('./partials/head.ejs') %>
+<body>
+<%- include('./partials/navbar.ejs') %>
+
+    <div class="container" id="exibir-pergunta">
+        <div class="card">
+            <div class="card-header">
+                <label>Titulo da Pergunta:</label>
+                <h6> <%= pergunta.titulo %></h6>
+            </div>    
+            
+            <div class="card-body">
+                <label>Descrição da pergunta:</label>
+                <h6> <%= pergunta.descricao %> </h6>
+            </div>
+
+            <div class="card-footer">
+                <label>Informações: </label>
+                <h6>Criação da pergunta: </h6>
+                <p> <%= pergunta.createdAt %> </p>
+                <h6>Ultima atualização: </h6>
+                <p> <%= pergunta.updatedAt %> </p>
+                
+                <form method="POST" action="/answer">
+                    <label>Responda: </label><br>
+                    <textarea placeholder="Digite sua resposta: " class="form-control" name="corpo"></textarea><br>
+                    <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
+                    <button type="submit" class="btn btn-primary">Responder</button>
+                </form>
+
+                <hr>
+                <% respostas.forEach(resposta => { %>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <label>Resposta:</label>
+                            <h6> <%= resposta.corpo %> </h6>
+                        </div>
+
+                        <div class="card-body">
+                            <label>Data da resposta: </label>
+                            <h6> <%= resposta.createdAt %> </h6>
+                        </div>
+
+                        <div class="card-body">
+                            <label>Ultima atualização da resposta: </label>
+                            <h6> <%= resposta.updatedAt %> </h6>
+                        </div>
+                    </div>    
+                <% }) %>
+            </div>
+        </div>    
+    </div>
+
+</body>
+<%- include('./partials/footer.ejs') %>
